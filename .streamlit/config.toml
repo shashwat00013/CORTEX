@@ -1,0 +1,6 @@
+[server]
+# Disable module-path scanning to suppress torchvision/transformers watcher noise.
+# Our app uses sentence-transformers which pulls in transformers; Streamlit's watcher
+# tries to introspect all its optional vision submodules and logs hundreds of harmless
+# ModuleNotFoundError lines for torchvision. This setting stops that entirely.
+fileWatcherType = "none"

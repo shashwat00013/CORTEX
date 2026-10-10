@@ -5,3 +5,4 @@ __pycache__/
 *.pyc
 data/*
 !data/.gitkeep
+test_retrieval.py
