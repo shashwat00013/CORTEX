@@ -1,4 +1,122 @@
 [
-  {"question": "Replace with a question your docs can answer", "keywords": ["expected", "words", "in the right chunk"]},
-  {"question": "Another question", "keywords": ["keyword"]}
+  {
+    "question": "What formula is used for linear regression with one feature, and what are the roles of w and b?",
+    "keywords": ["wx", "bias", "weight"],
+    "source": "01_Supervised_Machine_Learning_Notes (1).pdf",
+    "type": "direct"
+  },
+  {
+    "question": "In the worked example for predicting exam score from study hours, what is the predicted score for a student who studies 5 hours?",
+    "keywords": ["75", "study hours", "exam score"],
+    "source": "01_Supervised_Machine_Learning_Notes (1).pdf",
+    "type": "specific-term"
+  },
+  {
+    "question": "What threshold is commonly used to convert the sigmoid output to a class prediction in logistic regression?",
+    "keywords": ["0.5", "threshold", "sigmoid"],
+    "source": "01_Supervised_Machine_Learning_Notes (1).pdf",
+    "type": "direct"
+  },
+  {
+    "question": "How does a model fail when it memorizes the training examples including their noise rather than generalizing to unseen data?",
+    "keywords": ["overfitting", "noise", "poorly"],
+    "source": "01_Supervised_Machine_Learning_Notes (1).pdf",
+    "type": "paraphrased"
+  },
+  {
+    "question": "Which evaluation metric combines precision and recall into a single score using their harmonic mean?",
+    "keywords": ["F1-score", "harmonic mean", "precision", "recall"],
+    "source": "01_Supervised_Machine_Learning_Notes (1).pdf",
+    "type": "paraphrased"
+  },
+  {
+    "question": "What is data leakage as defined in the mini glossary?",
+    "keywords": ["unavailable", "prediction time", "improperly", "leakage"],
+    "source": "01_Supervised_Machine_Learning_Notes (1).pdf",
+    "type": "direct"
+  },
+  {
+    "question": "What is a baseline model, according to the mini glossary?",
+    "keywords": ["baseline", "reference model", "judge"],
+    "source": "01_Supervised_Machine_Learning_Notes (1).pdf",
+    "type": "direct"
+  },
+  {
+    "question": "What is the objective function that K-means minimizes during clustering?",
+    "keywords": ["within-cluster", "squared distances", "centroids"],
+    "source": "02_Unsupervised_Learning_Clustering_Notes.pdf",
+    "type": "direct"
+  },
+  {
+    "question": "What exactly happens in step 4 of the K-means algorithm?",
+    "keywords": ["recalculate", "centroid", "mean", "assigned"],
+    "source": "02_Unsupervised_Learning_Clustering_Notes.pdf",
+    "type": "specific-term"
+  },
+  {
+    "question": "What metric measures how tightly packed each cluster is relative to other clusters, where higher values indicate better separation?",
+    "keywords": ["silhouette", "separated"],
+    "source": "02_Unsupervised_Learning_Clustering_Notes.pdf",
+    "type": "paraphrased"
+  },
+  {
+    "question": "What two features are used in the toy example about discovering behavioral groups among store customers?",
+    "keywords": ["visits per month", "average spend", "store"],
+    "source": "02_Unsupervised_Learning_Clustering_Notes.pdf",
+    "type": "direct"
+  },
+  {
+    "question": "Why can K-means produce poor results when the clusters in the data have very different shapes, densities, or sizes?",
+    "keywords": ["Euclidean", "shapes", "densities", "initialization"],
+    "source": "02_Unsupervised_Learning_Clustering_Notes.pdf",
+    "type": "paraphrased"
+  },
+  {
+    "question": "Which anomaly detection method mentioned in the notes is based on the idea of isolating observations?",
+    "keywords": ["isolation forests", "anomaly", "reconstruction-error"],
+    "source": "02_Unsupervised_Learning_Clustering_Notes.pdf",
+    "type": "specific-term"
+  },
+  {
+    "question": "What does the elbow method plot on its axes when choosing the number of clusters?",
+    "keywords": ["elbow", "within-cluster sum of squares"],
+    "source": "02_Unsupervised_Learning_Clustering_Notes.pdf",
+    "type": "direct"
+  },
+  {
+    "question": "What preprocessing steps does the notes document recommend before applying PCA, particularly when features use different units?",
+    "keywords": ["centered", "scaling", "units", "PCA"],
+    "source": "02_Unsupervised_Learning_Clustering_Notes.pdf",
+    "type": "paraphrased"
+  },
+  {
+    "question": "What are the four stages of the proposed DocQA system described in the synthetic RAG paper?",
+    "keywords": ["ingest", "overlapping chunks", "citations", "retrieve"],
+    "source": "03_Synthetic_RAG_Document_QA_Research_Paper.pdf",
+    "type": "direct"
+  },
+  {
+    "question": "What is the arXiv identifier for the Lewis et al. 2020 paper on retrieval-augmented generation cited in the references?",
+    "keywords": ["2005.11401", "Lewis"],
+    "source": "03_Synthetic_RAG_Document_QA_Research_Paper.pdf",
+    "type": "specific-term"
+  },
+  {
+    "question": "According to the paper, under what condition should the system route a query to web search rather than answering from local documents?",
+    "keywords": ["web fallback", "absent", "current information"],
+    "source": "03_Synthetic_RAG_Document_QA_Research_Paper.pdf",
+    "type": "paraphrased"
+  },
+  {
+    "question": "Why can a generated citation look correct but still point to the wrong page, according to the limitations section?",
+    "keywords": ["plausible", "wrong page", "validated", "retrieval metadata"],
+    "source": "03_Synthetic_RAG_Document_QA_Research_Paper.pdf",
+    "type": "paraphrased"
+  },
+  {
+    "question": "What field in the metadata schema distinguishes whether a chunk came from a local document or a web result?",
+    "keywords": ["source_type", "local_pdf", "schema"],
+    "source": "03_Synthetic_RAG_Document_QA_Research_Paper.pdf",
+    "type": "direct"
+  }
 ]

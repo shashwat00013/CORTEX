@@ -25,6 +25,7 @@ with st.sidebar:
 
     st.header("Agent settings")
     allow_web = st.toggle("Web search fallback", value=True)
+    use_grader = st.toggle("Smart grader (LLM checks if docs answer it)", value=True)
     threshold = st.slider("Min relevance (below = search web)", 0.0, 1.0, config.MIN_RELEVANCE, 0.05)
     st.caption(f"LLM: {config.LLM_PROVIDER}")
 
@@ -38,6 +39,7 @@ for m in st.session_state.messages:
             st.caption(m["meta"])
 
 if q := st.chat_input("Ask something about your documents..."):
+    history = list(st.session_state.messages)
     st.session_state.messages.append({"role": "user", "content": q})
     with st.chat_message("user"):
         st.markdown(q)
@@ -45,15 +47,15 @@ if q := st.chat_input("Ask something about your documents..."):
     with st.chat_message("assistant"):
         with st.spinner("Retrieving + thinking..."):
             try:
-                out = answer(q, allow_web=allow_web, threshold=threshold)
+                out = answer(q, allow_web=allow_web, threshold=threshold,
+                             use_grader=use_grader, history=history)
             except Exception as e:
                 st.error(f"Error: {e}")
                 st.stop()
         st.markdown(out["answer"])
-        meta = (
-            f"Top similarity: {out['top_similarity']:.2f} | "
-            + ("Web search used" if out["used_web"] else "Answered from local docs")
-        )
+        meta = f"Top similarity: {out['top_similarity']:.2f} | {out['route']}"
+        if out["standalone"].strip() != q.strip():
+            meta += f" | Understood as: {out['standalone']}"
         st.caption(meta)
         with st.expander("Sources"):
             for i, s in enumerate(out["sources"], 1):
